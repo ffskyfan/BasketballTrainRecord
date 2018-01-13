@@ -1,4 +1,4 @@
-package com.deni.baby.recordbabymove.content_view;
+package com.deni.basketball.recordtrain.content_view;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.deni.baby.recordbabymove.RecordDBHelper;
+import com.deni.basketball.recordtrain.RecordDBHelper;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.chart.PointStyle;

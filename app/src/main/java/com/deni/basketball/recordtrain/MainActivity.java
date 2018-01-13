@@ -1,28 +1,21 @@
-package com.deni.baby.recordbabymove;
+package com.deni.basketball.recordtrain;
 
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.ListView;
 import android.widget.RemoteViews;
-import android.widget.SimpleAdapter;
 import android.widget.TabHost;
 
-import com.deni.baby.recordbabymove.content_view.RecordList;
+import com.deni.basketball.recordtrain.content_view.RecordList;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -53,8 +46,8 @@ public class MainActivity extends AppCompatActivity  {
         Notification.Builder builder = new Notification.Builder(this);
         builder.setContent(mRemoteViews);
         builder.setAutoCancel(false);
-        builder.setTicker("记录宝宝胎动");
-        builder.setContentTitle("宝宝胎动记录");
+        builder.setTicker("记录篮球训练");
+        builder.setContentTitle("篮球训练记录");
         builder.setContentText("");
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setContentIntent(recordPendingIntent);

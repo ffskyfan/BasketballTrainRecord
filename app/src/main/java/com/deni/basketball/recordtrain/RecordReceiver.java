@@ -1,4 +1,4 @@
-package com.deni.baby.recordbabymove;
+package com.deni.basketball.recordtrain;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

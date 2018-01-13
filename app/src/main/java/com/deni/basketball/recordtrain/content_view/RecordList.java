@@ -1,4 +1,4 @@
-package com.deni.baby.recordbabymove.content_view;
+package com.deni.basketball.recordtrain.content_view;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.deni.baby.recordbabymove.R;
-import com.deni.baby.recordbabymove.RecordDBHelper;
+import com.deni.basketball.recordtrain.R;
+import com.deni.basketball.recordtrain.RecordDBHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
