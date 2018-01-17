@@ -1,6 +1,7 @@
 package com.deni.basketball.recordtrain;
 
 import android.accessibilityservice.AccessibilityService;
+import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.util.Log;
 import android.view.Gravity;
@@ -17,8 +18,7 @@ import android.widget.FrameLayout;
 public class TrainAccessibility extends AccessibilityService {
 
         private static final String TAG = "TrainAccessibility";
-
-        FrameLayout mLayout;
+        private static final String TRAINACCESSIBILITY_BROADCAST_ACTION = "com.deni.basketball.recordtrain.accessibility_broadcast";
 
         @Override
         public void onAccessibilityEvent(AccessibilityEvent event) {
@@ -38,13 +38,15 @@ public class TrainAccessibility extends AccessibilityService {
             if (action == KeyEvent.ACTION_UP) {
                 if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
                     Log.d("Hello", "KeyUp");
+                    Intent intent = new Intent(TRAINACCESSIBILITY_BROADCAST_ACTION);
+                    intent.putExtra("Msg", "Hi");
+                    sendBroadcast(intent);
                 } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
                     Log.d("Hello", "KeyDown");
                 }
-                return true;
-            } else {
-                return super.onKeyEvent(event);
             }
+
+            return super.onKeyEvent(event);
         }
 
 }

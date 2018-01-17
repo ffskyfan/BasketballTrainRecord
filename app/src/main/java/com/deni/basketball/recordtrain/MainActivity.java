@@ -3,9 +3,14 @@ package com.deni.basketball.recordtrain;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
+import android.content.Context;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.support.v4.media.session.MediaButtonReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -79,6 +84,8 @@ public class MainActivity extends AppCompatActivity  {
 
         ListView listView=(ListView)findViewById(R.id.listView);
         recordList.refreshList(listView);
+
+        openMediaButtonMonitor(this);
     }
 
     @Override
@@ -109,4 +116,20 @@ public class MainActivity extends AppCompatActivity  {
         recordList.refreshList(listView);
     }
 
+    public void openMediaButtonMonitor(Context context) {
+        AudioManager audioManager = (AudioManager) context
+                .getSystemService(Context.AUDIO_SERVICE);
+        ComponentName name = new ComponentName(context.getPackageName(),
+                MediaButtonReceiver.class.getName());
+        audioManager.registerMediaButtonEventReceiver(name);
+        Log.i("deni", "openMediaButtonMonitor");
+    }
+
+    public void closeMediaButtonMonitor(Context context) {
+        AudioManager audioManager = (AudioManager) context
+                .getSystemService(Context.AUDIO_SERVICE);
+        ComponentName name = new ComponentName(context.getPackageName(),
+                MediaButtonReceiver.class.getName());
+        audioManager.unregisterMediaButtonEventReceiver(name);
+    }
 }
